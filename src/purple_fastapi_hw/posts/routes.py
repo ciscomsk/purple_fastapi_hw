@@ -13,11 +13,11 @@ async def create_post(request: Request):
     pass
 
 
-@router.put("/")
-async def update_post(request: Request):
+@router.put("/{post_id}")
+def update_post(post_id: int):
     pass
 
 
-@router.delete("/")
-async def delete_post(request: Request):
+@router.delete("/{post_id}")
+async def delete_post(post_id: int):
     pass
