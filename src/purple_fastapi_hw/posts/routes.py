@@ -1,23 +1,29 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Depends
+
+from purple_fastapi_hw.posts.schema import PostPath, PostCreateRequest
 
 router = APIRouter(prefix="/posts")
 
 
 @router.get("/{post_id}")
-def get_post(post_id: int):
+def get_post(path: PostPath = Depends()):
     pass
 
 
 @router.post("/")
-async def create_post(request: Request):
+async def create_post(data: PostCreateRequest):
     pass
 
 
 @router.put("/{post_id}")
-def update_post(post_id: int):
+def update_post(
+        data: PostCreateRequest,
+        path: PostPath = Depends()
+
+):
     pass
 
 
 @router.delete("/{post_id}")
-async def delete_post(post_id: int):
+async def delete_post(path: PostPath = Depends()):
     pass
