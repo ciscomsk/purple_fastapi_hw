@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 
-from purple_fastapi_hw.posts.schema import PostPath, PostCreateRequest
+from purple_fastapi_hw.posts.schema import PostPath, PostCreateRequest, PostUpdateRequest
 
 router = APIRouter(prefix="/posts")
 
@@ -17,7 +17,7 @@ async def create_post(data: PostCreateRequest):
 
 @router.put("/{post_id}")
 def update_post(
-        data: PostCreateRequest,
+        data: PostUpdateRequest,
         path: PostPath = Depends()
 ):
     pass
