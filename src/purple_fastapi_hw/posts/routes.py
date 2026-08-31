@@ -19,7 +19,6 @@ async def create_post(data: PostCreateRequest):
 def update_post(
         data: PostCreateRequest,
         path: PostPath = Depends()
-
 ):
     pass
 
